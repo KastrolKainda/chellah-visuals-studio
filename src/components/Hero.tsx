@@ -19,13 +19,18 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Video/Image with Overlay */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Professional Photography"
-          className="w-full h-full object-cover opacity-40"
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-30"
+          poster={heroImage}
+        >
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-photographer-taking-pictures-in-nature-34404-large.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-hero" />
       </div>
 
@@ -45,7 +50,8 @@ const Hero = () => {
           <Button
             onClick={scrollToContact}
             size="lg"
-            className="bg-gradient-accent text-primary-foreground hover:shadow-elegant transition-all font-inter group"
+            variant="orange"
+            className="font-inter group"
           >
             Book a Session
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
@@ -53,8 +59,8 @@ const Hero = () => {
           <Button
             onClick={scrollToPortfolio}
             size="lg"
-            variant="outline"
-            className="border-accent text-accent hover:bg-accent hover:text-primary-foreground transition-all font-inter"
+            variant="blue"
+            className="font-inter"
           >
             View Portfolio
           </Button>

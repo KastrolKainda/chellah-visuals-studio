@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -6,12 +7,12 @@ import portfolio5 from "@/assets/portfolio-5.jpg";
 import portfolio6 from "@/assets/portfolio-6.jpg";
 
 const portfolioItems = [
-  { id: 1, image: portfolio1, title: "Portrait", category: "Portrait" },
-  { id: 2, image: portfolio2, title: "Wedding", category: "Wedding" },
-  { id: 3, image: portfolio3, title: "Commercial", category: "Commercial" },
-  { id: 4, image: portfolio4, title: "Landscape", category: "Landscape" },
-  { id: 5, image: portfolio5, title: "Fashion", category: "Fashion" },
-  { id: 6, image: portfolio6, title: "Architecture", category: "Architecture" },
+  { id: 1, image: portfolio1, title: "Portrait", category: "portrait" },
+  { id: 2, image: portfolio2, title: "Wedding", category: "wedding" },
+  { id: 3, image: portfolio3, title: "Commercial", category: "commercial" },
+  { id: 4, image: portfolio4, title: "Landscape", category: "landscape" },
+  { id: 5, image: portfolio5, title: "Fashion", category: "fashion" },
+  { id: 6, image: portfolio6, title: "Architecture", category: "architecture" },
 ];
 
 const Portfolio = () => {
@@ -27,9 +28,10 @@ const Portfolio = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {portfolioItems.map((item, index) => (
-            <div
+            <Link
               key={item.id}
-              className="group relative overflow-hidden rounded-lg aspect-[4/5] cursor-pointer animate-fade-in"
+              to={`/portfolio/${item.category}`}
+              className="group relative overflow-hidden rounded-lg aspect-[4/5] cursor-pointer animate-fade-in block"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <img
@@ -42,10 +44,10 @@ const Portfolio = () => {
                   <h3 className="font-playfair text-2xl font-semibold text-accent mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-foreground/80 font-inter">{item.category}</p>
+                  <p className="text-foreground/80 font-inter">View Gallery</p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

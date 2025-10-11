@@ -20,9 +20,13 @@ export default {
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
         'gradient-accent': 'var(--gradient-accent)',
+        'gradient-blue': 'var(--gradient-blue)',
+        'gradient-orange': 'var(--gradient-orange)',
       },
       boxShadow: {
         'elegant': 'var(--shadow-elegant)',
+        'blue': 'var(--shadow-blue)',
+        'orange': 'var(--shadow-orange)',
         'soft': 'var(--shadow-soft)',
       },
       transitionProperty: {
@@ -53,6 +57,18 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+        },
+        blue: {
+          DEFAULT: "hsl(var(--blue))",
+          foreground: "hsl(var(--blue-foreground))",
+        },
+        orange: {
+          DEFAULT: "hsl(var(--orange))",
+          foreground: "hsl(var(--orange-foreground))",
+        },
+        grey: {
+          section: "hsl(var(--grey-section))",
+          light: "hsl(var(--grey-light))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
