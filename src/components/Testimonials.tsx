@@ -112,13 +112,30 @@ const Testimonials = () => {
           <h3 className="font-playfair text-3xl font-bold text-center mb-12 text-foreground">
             Our <span className="text-orange">Partners</span>
           </h3>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
-            <div className="font-playfair text-2xl font-bold">VOGUE</div>
-            <div className="font-playfair text-2xl font-bold">National Geographic</div>
-            <div className="font-playfair text-2xl font-bold">CONDE NAST</div>
-            <div className="font-playfair text-2xl font-bold">ADOBE</div>
-            <div className="font-playfair text-2xl font-bold">CANON</div>
-          </div>
+          <Carousel
+            opts={{
+              align: "center",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 2500,
+              }),
+            ]}
+            className="max-w-4xl mx-auto"
+          >
+            <CarouselContent>
+              {["VOGUE", "National Geographic", "CONDE NAST", "ADOBE", "CANON"].map((partner, index) => (
+                <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <div className="flex items-center justify-center p-8">
+                    <div className="font-playfair text-2xl md:text-3xl font-bold opacity-60 hover:opacity-100 transition-opacity duration-300">
+                      {partner}
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </div>
     </section>
