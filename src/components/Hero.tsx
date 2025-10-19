@@ -36,17 +36,17 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
-        <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in">
+        <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-in drop-shadow-2xl">
           Capturing Moments,
           <br />
-          <span className="bg-gradient-accent bg-clip-text text-transparent">
+          <span className="bg-gradient-accent bg-clip-text text-transparent animate-pulse">
             Creating Memories
           </span>
         </h1>
-        <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto mb-10 animate-fade-in-up font-inter">
+        <p className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto mb-10 animate-fade-in-up font-inter drop-shadow-lg">
           Professional photography services that transform fleeting moments into timeless art
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in">
           <Button
             onClick={scrollToContact}
             size="lg"
@@ -60,9 +60,10 @@ const Hero = () => {
             onClick={scrollToPortfolio}
             size="lg"
             variant="blue"
-            className="font-inter"
+            className="font-inter group"
           >
             View Portfolio
+            <ArrowRight className="ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" size={20} />
           </Button>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
 import portfolio3 from "@/assets/portfolio-3.jpg";
@@ -17,12 +18,13 @@ const portfolioItems = [
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-6">
-          Featured <span className="text-accent">Work</span>
+    <section id="portfolio" className="py-24 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue/5 via-transparent to-orange/5 pointer-events-none" />
+      <div className="container mx-auto px-6 relative z-10">
+        <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-6 animate-fade-in">
+          Featured <span className="bg-gradient-accent bg-clip-text text-transparent">Work</span>
         </h2>
-        <p className="text-center text-muted-foreground mb-16 font-inter text-lg">
+        <p className="text-center text-muted-foreground mb-16 font-inter text-lg animate-fade-in-up">
           A glimpse into our creative journey
         </p>
 
@@ -31,20 +33,23 @@ const Portfolio = () => {
             <Link
               key={item.id}
               to={`/portfolio/${item.category}`}
-              className="group relative overflow-hidden rounded-lg aspect-[4/5] cursor-pointer animate-fade-in block"
+              className="group relative overflow-hidden rounded-xl aspect-[4/5] cursor-pointer animate-scale-in block shadow-lg hover:shadow-2xl transition-all duration-500 border border-border/50 hover:border-accent/50"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-8">
-                <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="font-playfair text-2xl font-semibold text-accent mb-2">
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-8">
+                <div className="text-center transform translate-y-8 group-hover:translate-y-0 transition-all duration-500">
+                  <h3 className="font-playfair text-2xl font-semibold bg-gradient-accent bg-clip-text text-transparent mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-foreground/80 font-inter">View Gallery</p>
+                  <p className="text-foreground/90 font-inter flex items-center justify-center gap-2">
+                    View Gallery 
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                  </p>
                 </div>
               </div>
             </Link>

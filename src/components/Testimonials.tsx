@@ -49,12 +49,13 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-6">
-          What Our <span className="text-blue">Clients Say</span>
+    <section className="py-24 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue/5 via-transparent to-orange/5 pointer-events-none" />
+      <div className="container mx-auto px-6 relative z-10">
+        <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-6 animate-fade-in">
+          What Our <span className="bg-gradient-blue bg-clip-text text-transparent">Clients Say</span>
         </h2>
-        <p className="text-center text-muted-foreground mb-16 font-inter text-lg">
+        <p className="text-center text-muted-foreground mb-16 font-inter text-lg animate-fade-in-up">
           Trusted by individuals and businesses worldwide
         </p>
 
@@ -73,15 +74,15 @@ const Testimonials = () => {
           <CarouselContent>
             {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2">
-                <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-8 hover:shadow-blue transition-all duration-500 h-full">
+                <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-8 hover:shadow-blue hover:border-blue/50 hover:-translate-y-2 transition-all duration-500 h-full group">
                   <div className="flex items-center gap-4 mb-6">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover ring-2 ring-blue"
+                      className="w-16 h-16 rounded-full object-cover ring-2 ring-blue group-hover:ring-4 group-hover:scale-110 transition-all duration-300"
                     />
                     <div>
-                      <h3 className="font-playfair text-xl font-semibold text-foreground">
+                      <h3 className="font-playfair text-xl font-semibold text-foreground group-hover:text-blue transition-colors">
                         {testimonial.name}
                       </h3>
                       <p className="text-muted-foreground font-inter text-sm">
@@ -92,11 +93,11 @@ const Testimonials = () => {
 
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-orange text-orange" />
+                      <Star key={i} className="w-5 h-5 fill-orange text-orange group-hover:scale-110 transition-transform" style={{ transitionDelay: `${i * 50}ms` }} />
                     ))}
                   </div>
 
-                  <p className="text-foreground/80 font-inter leading-relaxed italic">
+                  <p className="text-foreground/90 font-inter leading-relaxed italic">
                     "{testimonial.content}"
                   </p>
                 </div>
@@ -108,9 +109,9 @@ const Testimonials = () => {
         </Carousel>
 
         {/* Partners Section */}
-        <div className="mt-20">
+        <div className="mt-20 animate-fade-in-up">
           <h3 className="font-playfair text-3xl font-bold text-center mb-12 text-foreground">
-            Our <span className="text-orange">Partners</span>
+            Our <span className="bg-gradient-orange bg-clip-text text-transparent">Partners</span>
           </h3>
           <Carousel
             opts={{
@@ -127,8 +128,8 @@ const Testimonials = () => {
             <CarouselContent>
               {["VOGUE", "National Geographic", "CONDE NAST", "ADOBE", "CANON"].map((partner, index) => (
                 <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <div className="flex items-center justify-center p-8">
-                    <div className="font-playfair text-2xl md:text-3xl font-bold opacity-60 hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center justify-center p-8 group">
+                    <div className="font-playfair text-2xl md:text-3xl font-bold opacity-60 hover:opacity-100 bg-gradient-accent bg-clip-text text-transparent hover:scale-110 transition-all duration-300">
                       {partner}
                     </div>
                   </div>
