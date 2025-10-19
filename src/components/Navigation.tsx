@@ -30,9 +30,12 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <h1 className="font-playfair text-3xl font-bold bg-gradient-accent bg-clip-text text-transparent">
+          <button 
+            onClick={() => scrollToSection("home")}
+            className="font-playfair text-3xl font-bold bg-gradient-accent bg-clip-text text-transparent hover:scale-105 transition-transform duration-300 cursor-pointer"
+          >
             Chellah
-          </h1>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">

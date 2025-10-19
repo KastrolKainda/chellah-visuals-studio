@@ -4,8 +4,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary/30 backdrop-blur-sm py-12 border-t border-border/50 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-accent/5 via-transparent to-transparent pointer-events-none" />
+    <footer className="bg-gradient-to-b from-[hsl(222,47%,8%)] to-[hsl(222,47%,11%)] py-12 border-t border-accent/20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-accent/10 via-blue/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(217,91%,60%,0.15),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(262,83%,58%,0.15),transparent_50%)]" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div className="animate-fade-in">
