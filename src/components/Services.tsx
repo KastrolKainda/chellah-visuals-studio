@@ -42,8 +42,8 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-secondary/30 backdrop-blur-sm relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-bl from-orange/5 via-transparent to-blue/5 pointer-events-none" />
+    <section id="services" className="py-24 bg-secondary/50 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,hsl(45,93%,47%,0.05),transparent_40%)]" />
       <div className="container mx-auto px-6 relative z-10">
         <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-6 animate-fade-in">
           Our <span className="bg-gradient-accent bg-clip-text text-transparent">Services</span>
@@ -56,14 +56,14 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="bg-card/80 backdrop-blur-sm border-border/50 hover:shadow-elegant hover:border-accent/50 hover:-translate-y-2 transition-all duration-500 group animate-scale-in"
+              className="bg-card border-border/50 hover:shadow-gold hover:border-gold/50 hover:-translate-y-2 transition-all duration-500 group animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-accent/10 mb-4 group-hover:bg-gradient-accent/20 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                  <service.icon className="text-accent" size={28} />
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gold/10 mb-4 group-hover:bg-gold/20 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                  <service.icon className="text-gold" size={28} />
                 </div>
-                <CardTitle className="font-playfair text-2xl group-hover:text-accent transition-colors">
+                <CardTitle className="font-playfair text-2xl group-hover:text-gold transition-colors">
                   {service.title}
                 </CardTitle>
                 <CardDescription className="font-inter text-muted-foreground">
@@ -71,7 +71,7 @@ const Services = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-accent font-inter font-semibold text-lg">{service.price}</p>
+                <p className="text-gold font-inter font-semibold text-lg">{service.price}</p>
               </CardContent>
             </Card>
           ))}
