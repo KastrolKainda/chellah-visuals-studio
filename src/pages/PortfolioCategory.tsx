@@ -72,7 +72,7 @@ const PortfolioCategory = () => {
 
           <div className="mt-16 text-center">
             <Link to="/#contact">
-              <Button variant="blue" size="lg" className="font-inter">
+              <Button variant="gold" size="lg" className="font-inter">
                 Book a {category} Session
               </Button>
             </Link>

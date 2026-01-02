@@ -20,14 +20,15 @@ export default {
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
         'gradient-accent': 'var(--gradient-accent)',
-        'gradient-blue': 'var(--gradient-blue)',
-        'gradient-orange': 'var(--gradient-orange)',
+        'gradient-gold': 'var(--gradient-gold)',
+        'gradient-dark': 'var(--gradient-dark)',
       },
       boxShadow: {
         'elegant': 'var(--shadow-elegant)',
-        'blue': 'var(--shadow-blue)',
-        'orange': 'var(--shadow-orange)',
+        'gold': 'var(--shadow-gold)',
+        'copper': 'var(--shadow-copper)',
         'soft': 'var(--shadow-soft)',
+        'glow': 'var(--shadow-glow)',
       },
       transitionProperty: {
         'smooth': 'var(--transition-smooth)',
@@ -58,17 +59,17 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
-        blue: {
-          DEFAULT: "hsl(var(--blue))",
-          foreground: "hsl(var(--blue-foreground))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          foreground: "hsl(var(--gold-foreground))",
         },
-        orange: {
-          DEFAULT: "hsl(var(--orange))",
-          foreground: "hsl(var(--orange-foreground))",
+        copper: {
+          DEFAULT: "hsl(var(--copper))",
+          foreground: "hsl(var(--copper-foreground))",
         },
-        grey: {
-          section: "hsl(var(--grey-section))",
-          light: "hsl(var(--grey-light))",
+        charcoal: {
+          DEFAULT: "hsl(var(--charcoal))",
+          foreground: "hsl(var(--charcoal-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

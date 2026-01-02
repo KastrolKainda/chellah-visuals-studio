@@ -49,13 +49,14 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue/5 via-transparent to-orange/5 pointer-events-none" />
+    <section className="py-24 bg-charcoal text-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,hsl(45,93%,47%,0.1),transparent_40%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,hsl(25,80%,50%,0.08),transparent_40%)]" />
       <div className="container mx-auto px-6 relative z-10">
         <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-6 animate-fade-in">
-          What Our <span className="bg-gradient-blue bg-clip-text text-transparent">Clients Say</span>
+          What Our <span className="bg-gradient-gold bg-clip-text text-transparent">Clients Say</span>
         </h2>
-        <p className="text-center text-muted-foreground mb-16 font-inter text-lg animate-fade-in-up">
+        <p className="text-center text-white/60 mb-16 font-inter text-lg animate-fade-in-up">
           Trusted by individuals and businesses worldwide
         </p>
 
@@ -74,18 +75,18 @@ const Testimonials = () => {
           <CarouselContent>
             {testimonials.map((testimonial) => (
               <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/2">
-                <div className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-8 hover:shadow-blue hover:border-blue/50 hover:-translate-y-2 transition-all duration-500 h-full group">
+                <div className="bg-white/5 backdrop-blur-sm border border-gold/20 rounded-xl p-8 hover:shadow-gold hover:border-gold/40 hover:-translate-y-2 transition-all duration-500 h-full group">
                   <div className="flex items-center gap-4 mb-6">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover ring-2 ring-blue group-hover:ring-4 group-hover:scale-110 transition-all duration-300"
+                      className="w-16 h-16 rounded-full object-cover ring-2 ring-gold/50 group-hover:ring-4 group-hover:ring-gold group-hover:scale-110 transition-all duration-300"
                     />
                     <div>
-                      <h3 className="font-playfair text-xl font-semibold text-foreground group-hover:text-blue transition-colors">
+                      <h3 className="font-playfair text-xl font-semibold text-white group-hover:text-gold transition-colors">
                         {testimonial.name}
                       </h3>
-                      <p className="text-muted-foreground font-inter text-sm">
+                      <p className="text-white/50 font-inter text-sm">
                         {testimonial.role} • {testimonial.company}
                       </p>
                     </div>
@@ -93,25 +94,25 @@ const Testimonials = () => {
 
                   <div className="flex gap-1 mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-orange text-orange group-hover:scale-110 transition-transform" style={{ transitionDelay: `${i * 50}ms` }} />
+                      <Star key={i} className="w-5 h-5 fill-gold text-gold group-hover:scale-110 transition-transform" style={{ transitionDelay: `${i * 50}ms` }} />
                     ))}
                   </div>
 
-                  <p className="text-foreground/90 font-inter leading-relaxed italic">
+                  <p className="text-white/80 font-inter leading-relaxed italic">
                     "{testimonial.content}"
                   </p>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="border-gold/30 text-gold hover:bg-gold/10 hover:border-gold" />
+          <CarouselNext className="border-gold/30 text-gold hover:bg-gold/10 hover:border-gold" />
         </Carousel>
 
         {/* Partners Section */}
         <div className="mt-20 animate-fade-in-up">
-          <h3 className="font-playfair text-3xl font-bold text-center mb-12 text-foreground">
-            Our <span className="bg-gradient-orange bg-clip-text text-transparent">Partners</span>
+          <h3 className="font-playfair text-3xl font-bold text-center mb-12 text-white">
+            Our <span className="bg-gradient-accent bg-clip-text text-transparent">Partners</span>
           </h3>
           <Carousel
             opts={{
@@ -129,7 +130,7 @@ const Testimonials = () => {
               {["VOGUE", "National Geographic", "CONDE NAST", "ADOBE", "CANON"].map((partner, index) => (
                 <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
                   <div className="flex items-center justify-center p-8 group">
-                    <div className="font-playfair text-2xl md:text-3xl font-bold opacity-60 hover:opacity-100 bg-gradient-accent bg-clip-text text-transparent hover:scale-110 transition-all duration-300">
+                    <div className="font-playfair text-2xl md:text-3xl font-bold text-white/40 hover:text-gold bg-clip-text hover:scale-110 transition-all duration-300">
                       {partner}
                     </div>
                   </div>

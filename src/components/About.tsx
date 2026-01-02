@@ -2,7 +2,7 @@ import { Camera, Award, Heart } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-secondary/30 backdrop-blur-sm">
+    <section id="about" className="py-24 bg-secondary/50">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-6 animate-fade-in">
@@ -13,25 +13,25 @@ const About = () => {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center p-6 rounded-lg bg-card/80 backdrop-blur-sm border border-border/50 hover:shadow-blue hover:border-blue/50 hover:-translate-y-2 transition-all duration-500 group animate-scale-in">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue/10 mb-4 group-hover:bg-blue/20 group-hover:scale-110 transition-all duration-300">
-                <Camera className="text-blue group-hover:rotate-12 transition-transform duration-300" size={32} />
+            <div className="text-center p-6 rounded-lg bg-card border border-border/50 hover:shadow-gold hover:border-gold/50 hover:-translate-y-2 transition-all duration-500 group animate-scale-in">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gold/10 mb-4 group-hover:bg-gold/20 group-hover:scale-110 transition-all duration-300">
+                <Camera className="text-gold group-hover:rotate-12 transition-transform duration-300" size={32} />
               </div>
               <h3 className="font-playfair text-xl font-semibold mb-2">10+ Years</h3>
               <p className="text-muted-foreground font-inter">Professional Experience</p>
             </div>
 
-            <div className="text-center p-6 rounded-lg bg-card/80 backdrop-blur-sm border border-border/50 hover:shadow-orange hover:border-orange/50 hover:-translate-y-2 transition-all duration-500 group animate-scale-in" style={{ animationDelay: '0.1s' }}>
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange/10 mb-4 group-hover:bg-orange/20 group-hover:scale-110 transition-all duration-300">
-                <Award className="text-orange group-hover:rotate-12 transition-transform duration-300" size={32} />
+            <div className="text-center p-6 rounded-lg bg-card border border-border/50 hover:shadow-copper hover:border-copper/50 hover:-translate-y-2 transition-all duration-500 group animate-scale-in" style={{ animationDelay: '0.1s' }}>
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-copper/10 mb-4 group-hover:bg-copper/20 group-hover:scale-110 transition-all duration-300">
+                <Award className="text-copper group-hover:rotate-12 transition-transform duration-300" size={32} />
               </div>
               <h3 className="font-playfair text-xl font-semibold mb-2">Award Winning</h3>
               <p className="text-muted-foreground font-inter">International Recognition</p>
             </div>
 
-            <div className="text-center p-6 rounded-lg bg-card/80 backdrop-blur-sm border border-border/50 hover:shadow-elegant hover:border-accent/50 hover:-translate-y-2 transition-all duration-500 group animate-scale-in" style={{ animationDelay: '0.2s' }}>
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-4 group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
-                <Heart className="text-accent group-hover:scale-110 transition-transform duration-300" size={32} />
+            <div className="text-center p-6 rounded-lg bg-card border border-border/50 hover:shadow-elegant hover:border-gold/50 hover:-translate-y-2 transition-all duration-500 group animate-scale-in" style={{ animationDelay: '0.2s' }}>
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gold/10 mb-4 group-hover:bg-gold/20 group-hover:scale-110 transition-all duration-300">
+                <Heart className="text-gold group-hover:scale-110 transition-transform duration-300" size={32} />
               </div>
               <h3 className="font-playfair text-xl font-semibold mb-2">500+ Clients</h3>
               <p className="text-muted-foreground font-inter">Happy Memories Created</p>
