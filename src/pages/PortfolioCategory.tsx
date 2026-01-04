@@ -5,16 +5,16 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
-import portfolio3 from "@/assets/portfolio-3.jpg";
-import portfolio4 from "@/assets/portfolio-4.jpg";
+import portfolioNature from "@/assets/portfolio-nature.jpg";
+import portfolioSports from "@/assets/portfolio-sports.jpg";
 import portfolio5 from "@/assets/portfolio-5.jpg";
 import portfolio6 from "@/assets/portfolio-6.jpg";
 
 const categoryImages = {
   portrait: [portfolio1, portfolio1, portfolio1, portfolio1, portfolio1, portfolio1],
   wedding: [portfolio2, portfolio2, portfolio2, portfolio2, portfolio2, portfolio2],
-  commercial: [portfolio3, portfolio3, portfolio3, portfolio3, portfolio3, portfolio3],
-  landscape: [portfolio4, portfolio4, portfolio4, portfolio4, portfolio4, portfolio4],
+  nature: [portfolioNature, portfolioNature, portfolioNature, portfolioNature, portfolioNature, portfolioNature],
+  sports: [portfolioSports, portfolioSports, portfolioSports, portfolioSports, portfolioSports, portfolioSports],
   fashion: [portfolio5, portfolio5, portfolio5, portfolio5, portfolio5, portfolio5],
   architecture: [portfolio6, portfolio6, portfolio6, portfolio6, portfolio6, portfolio6],
 };
@@ -22,8 +22,8 @@ const categoryImages = {
 const categoryTitles = {
   portrait: "Portrait Photography",
   wedding: "Wedding Photography",
-  commercial: "Commercial Photography",
-  landscape: "Landscape Photography",
+  nature: "Nature & Wildlife Photography",
+  sports: "Sports Photography",
   fashion: "Fashion Photography",
   architecture: "Architecture Photography",
 };
