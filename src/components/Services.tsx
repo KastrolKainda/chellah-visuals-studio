@@ -6,37 +6,31 @@ const services = [
     icon: Heart,
     title: "Wedding Photography",
     description: "Capturing your special day with emotion and artistry, creating timeless memories.",
-    price: "Starting at $2,500",
   },
   {
     icon: User,
     title: "Portrait Sessions",
     description: "Professional portraits that showcase personality and elegance in every frame.",
-    price: "Starting at $500",
   },
   {
     icon: Briefcase,
     title: "Commercial Work",
     description: "High-end product and brand photography that elevates your business.",
-    price: "Custom Pricing",
   },
   {
     icon: Mountain,
     title: "Landscape Photography",
     description: "Stunning nature and landscape photography for collectors and enthusiasts.",
-    price: "Starting at $800",
   },
   {
     icon: Camera,
     title: "Event Coverage",
     description: "Complete event documentation with cinematic storytelling and attention to detail.",
-    price: "Starting at $1,200",
   },
   {
     icon: Building,
     title: "Architectural Photography",
     description: "Professional architectural photography highlighting design and structure.",
-    price: "Starting at $1,000",
   },
 ];
 
@@ -70,9 +64,6 @@ const Services = () => {
                   {service.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <p className="text-gold font-inter font-semibold text-lg">{service.price}</p>
-              </CardContent>
             </Card>
           ))}
         </div>

@@ -36,15 +36,6 @@ const testimonials = [
     content: "Working with Chellah was an absolute pleasure. The fashion photography perfectly captured our collection's essence. A true artist!",
     rating: 5,
   },
-  {
-    id: 4,
-    name: "David Thompson",
-    role: "Marketing Director",
-    company: "Urban Developments",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
-    content: "The architectural photography for our properties was stunning. Chellah's eye for composition and lighting is unmatched.",
-    rating: 5,
-  },
 ];
 
 const Testimonials = () => {
@@ -109,36 +100,6 @@ const Testimonials = () => {
           <CarouselNext className="border-gold/30 text-gold hover:bg-gold/10 hover:border-gold" />
         </Carousel>
 
-        {/* Partners Section */}
-        <div className="mt-20 animate-fade-in-up">
-          <h3 className="font-playfair text-3xl font-bold text-center mb-12 text-white">
-            Our <span className="bg-gradient-accent bg-clip-text text-transparent">Partners</span>
-          </h3>
-          <Carousel
-            opts={{
-              align: "center",
-              loop: true,
-            }}
-            plugins={[
-              Autoplay({
-                delay: 2500,
-              }),
-            ]}
-            className="max-w-4xl mx-auto"
-          >
-            <CarouselContent>
-              {["VOGUE", "National Geographic", "CONDE NAST", "ADOBE", "CANON"].map((partner, index) => (
-                <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <div className="flex items-center justify-center p-8 group">
-                    <div className="font-playfair text-2xl md:text-3xl font-bold text-white/40 hover:text-gold bg-clip-text hover:scale-110 transition-all duration-300">
-                      {partner}
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-        </div>
       </div>
     </section>
   );
