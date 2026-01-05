@@ -10,7 +10,7 @@ const PresidentMessage = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in">
-          Message from Our <span className="bg-gradient-accent bg-clip-text text-transparent">President</span>
+          Official <span className="bg-gradient-accent bg-clip-text text-transparent">Presidential Photographer</span>
         </h2>
         
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
