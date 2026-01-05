@@ -5,15 +5,20 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import portfolio1 from "@/assets/portfolio-1.jpg";
 import portfolio2 from "@/assets/portfolio-2.jpg";
-import portfolioNature from "@/assets/portfolio-nature.jpg";
 import portfolioSports from "@/assets/portfolio-sports.jpg";
 import portfolio5 from "@/assets/portfolio-5.jpg";
 import portfolio6 from "@/assets/portfolio-6.jpg";
+import nature1 from "@/assets/nature-1.jpg";
+import nature2 from "@/assets/nature-2.jpg";
+import nature3 from "@/assets/nature-3.jpg";
+import nature4 from "@/assets/nature-4.jpg";
+import nature5 from "@/assets/nature-5.jpg";
+import nature6 from "@/assets/nature-6.jpg";
 
 const categoryImages = {
   portrait: [portfolio1, portfolio1, portfolio1, portfolio1, portfolio1, portfolio1],
   wedding: [portfolio2, portfolio2, portfolio2, portfolio2, portfolio2, portfolio2],
-  nature: [portfolioNature, portfolioNature, portfolioNature, portfolioNature, portfolioNature, portfolioNature],
+  nature: [nature1, nature2, nature3, nature4, nature5, nature6],
   sports: [portfolioSports, portfolioSports, portfolioSports, portfolioSports, portfolioSports, portfolioSports],
   fashion: [portfolio5, portfolio5, portfolio5, portfolio5, portfolio5, portfolio5],
   architecture: [portfolio6, portfolio6, portfolio6, portfolio6, portfolio6, portfolio6],
