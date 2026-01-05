@@ -43,21 +43,21 @@ const PresidentMessage = () => {
           
           {/* Image Column */}
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-scale-in">
-            <div className="relative">
+            <div className="relative w-full max-w-lg">
               {/* Decorative glow */}
-              <div className="absolute -inset-2 bg-gradient-to-br from-gold/30 via-copper/20 to-transparent rounded-2xl blur-xl opacity-60" />
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-gold/20 rounded-full blur-xl animate-pulse" />
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-copper/20 rounded-full blur-lg animate-pulse" style={{ animationDelay: "0.5s" }} />
+              <div className="absolute -inset-4 bg-gradient-to-br from-gold/30 via-copper/20 to-transparent rounded-3xl blur-2xl opacity-60" />
+              <div className="absolute -top-8 -right-8 w-32 h-32 bg-gold/20 rounded-full blur-xl animate-pulse" />
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-copper/20 rounded-full blur-lg animate-pulse" style={{ animationDelay: "0.5s" }} />
               
               {/* Main image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gold/20 hover:border-gold/40 transition-all duration-500 group">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-gold/30 hover:border-gold/50 transition-all duration-500 group aspect-[3/4]">
                 <img
                   src={presidentImage}
                   alt="President Hakainde Hichilema"
-                  className="w-full max-w-sm lg:max-w-md h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             </div>
           </div>
