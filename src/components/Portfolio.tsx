@@ -1,19 +1,16 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-import portfolio1 from "@/assets/portfolio-1.jpg";
-import portfolio2 from "@/assets/portfolio-2.jpg";
+import wedding1 from "@/assets/wedding-1.jpg";
 import nature1 from "@/assets/nature-1.jpg";
 import portfolioSports from "@/assets/portfolio-sports.jpg";
-import portfolio5 from "@/assets/portfolio-5.jpg";
-import portfolio6 from "@/assets/portfolio-6.jpg";
 
 const portfolioItems = [
-  { id: 1, image: portfolio1, title: "Portrait", category: "portrait" },
-  { id: 2, image: portfolio2, title: "Wedding", category: "wedding" },
+  { id: 1, image: wedding1, title: "Portrait", category: "portrait" },
+  { id: 2, image: wedding1, title: "Wedding", category: "wedding" },
   { id: 3, image: nature1, title: "Nature & Wildlife", category: "nature" },
   { id: 4, image: portfolioSports, title: "Sports", category: "sports" },
-  { id: 5, image: portfolio5, title: "Fashion", category: "fashion" },
-  { id: 6, image: portfolio6, title: "Architecture", category: "architecture" },
+  { id: 5, image: wedding1, title: "Fashion", category: "fashion" },
+  { id: 6, image: wedding1, title: "Architecture", category: "architecture" },
 ];
 
 const Portfolio = () => {
