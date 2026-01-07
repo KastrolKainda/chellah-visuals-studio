@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import portraitCover from "@/assets/portrait-cover.jpg";
 import wedding1 from "@/assets/wedding-1.jpg";
 import nature1 from "@/assets/nature-1.jpg";
 import portfolioSports from "@/assets/portfolio-sports.jpg";
@@ -7,7 +8,7 @@ import fashion1 from "@/assets/fashion-1.jpg";
 import portfolioNature from "@/assets/portfolio-nature.jpg";
 
 const portfolioItems = [
-  { id: 1, image: wedding1, title: "Portrait", category: "portrait" },
+  { id: 1, image: portraitCover, title: "Portrait", category: "portrait" },
   { id: 2, image: wedding1, title: "Wedding", category: "wedding" },
   { id: 3, image: nature1, title: "Nature & Wildlife", category: "nature" },
   { id: 4, image: portfolioSports, title: "Sports", category: "sports" },
