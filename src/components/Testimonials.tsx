@@ -1,4 +1,5 @@
-import { Star, Quote, Clock, Users } from "lucide-react";
+import { Star, Quote } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const testimonials = [
   {
@@ -24,20 +25,16 @@ const testimonials = [
   },
 ];
 
-const stats = [
-  {
-    icon: Clock,
-    value: "15+",
-    label: "Years of Professional Experience",
-  },
-  {
-    icon: Users,
-    value: "5000+",
-    label: "Clients of Happy Memories Created",
-  },
-];
-
 const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="py-24 bg-charcoal text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,hsl(45,93%,47%,0.1),transparent_40%)]" />
@@ -50,51 +47,56 @@ const Testimonials = () => {
           Trusted by individuals and businesses worldwide
         </p>
 
-        {/* Stats Section */}
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-16 animate-fade-in">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center group">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gold/10 mb-4 group-hover:bg-gold/20 group-hover:scale-110 transition-all duration-300">
-                <stat.icon className="text-gold" size={28} />
-              </div>
-              <div className="font-playfair text-4xl md:text-5xl font-bold bg-gradient-gold bg-clip-text text-transparent mb-2">
-                {stat.value}
-              </div>
-              <p className="text-white/60 font-inter text-sm max-w-[180px]">{stat.label}</p>
-            </div>
-          ))}
-        </div>
+        {/* Testimonials Carousel */}
+        <div className="max-w-4xl mx-auto overflow-hidden">
+          <div 
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {testimonials.map((testimonial) => (
+              <div
+                key={testimonial.id}
+                className="w-full flex-shrink-0 px-4"
+              >
+                <div className="bg-white/5 backdrop-blur-sm border border-gold/20 rounded-xl p-8 text-center">
+                  <Quote className="w-10 h-10 text-gold/30 mb-4 mx-auto" />
+                  
+                  <div className="flex gap-1 mb-4 justify-center">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                    ))}
+                  </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.id}
-              className="bg-white/5 backdrop-blur-sm border border-gold/20 rounded-xl p-8 hover:shadow-gold hover:border-gold/40 hover:-translate-y-2 transition-all duration-500 group animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <Quote className="w-10 h-10 text-gold/30 mb-4 group-hover:text-gold/50 transition-colors" />
-              
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-gold text-gold" />
-                ))}
-              </div>
+                  <p className="text-white/80 font-inter text-lg leading-relaxed italic mb-6">
+                    "{testimonial.content}"
+                  </p>
 
-              <p className="text-white/80 font-inter leading-relaxed italic mb-6">
-                "{testimonial.content}"
-              </p>
-
-              <div className="border-t border-gold/20 pt-4">
-                <h3 className="font-playfair text-lg font-semibold text-white group-hover:text-gold transition-colors">
-                  {testimonial.name}
-                </h3>
-                <p className="text-white/50 font-inter text-sm">
-                  {testimonial.role}
-                </p>
+                  <div className="border-t border-gold/20 pt-4">
+                    <h3 className="font-playfair text-xl font-semibold text-gold">
+                      {testimonial.name}
+                    </h3>
+                    <p className="text-white/50 font-inter text-sm">
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Carousel Indicators */}
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex ? "bg-gold w-6" : "bg-white/30 hover:bg-white/50"
+                }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
