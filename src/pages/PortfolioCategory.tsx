@@ -29,6 +29,12 @@ import portrait3 from "@/assets/portrait-3.jpg";
 import portrait4 from "@/assets/portrait-4.jpg";
 import portrait5 from "@/assets/portrait-5.jpg";
 import portrait6 from "@/assets/portrait-6.jpg";
+import architecture1 from "@/assets/architecture-1.jpg";
+import architecture2 from "@/assets/architecture-2.jpg";
+import architecture3 from "@/assets/architecture-3.jpg";
+import architecture4 from "@/assets/architecture-4.jpg";
+import architecture5 from "@/assets/architecture-5.jpg";
+import architecture6 from "@/assets/architecture-6.jpg";
 
 const categoryImages = {
   portrait: [portrait1, portrait2, portrait3, portrait4, portrait5, portrait6],
@@ -36,7 +42,7 @@ const categoryImages = {
   nature: [nature1, nature2, nature3, nature4, nature5, nature6],
   sports: [portfolioSports, portfolioSports, portfolioSports, portfolioSports, portfolioSports, portfolioSports],
   fashion: [fashion1, fashion2, fashion3, fashion4, fashion5, fashion6],
-  architecture: [portfolioNature, portfolioNature, portfolioNature, portfolioNature, portfolioNature, portfolioNature],
+  architecture: [architecture1, architecture2, architecture3, architecture4, architecture5, architecture6],
 };
 
 const categoryTitles = {
