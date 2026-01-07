@@ -23,9 +23,15 @@ import fashion3 from "@/assets/fashion-3.jpg";
 import fashion4 from "@/assets/fashion-4.jpg";
 import fashion5 from "@/assets/fashion-5.jpg";
 import fashion6 from "@/assets/fashion-6.jpg";
+import portrait1 from "@/assets/portrait-1.jpg";
+import portrait2 from "@/assets/portrait-2.jpg";
+import portrait3 from "@/assets/portrait-3.jpg";
+import portrait4 from "@/assets/portrait-4.jpg";
+import portrait5 from "@/assets/portrait-5.jpg";
+import portrait6 from "@/assets/portrait-6.jpg";
 
 const categoryImages = {
-  portrait: [wedding1, wedding2, wedding3, wedding4, wedding5, wedding6],
+  portrait: [portrait1, portrait2, portrait3, portrait4, portrait5, portrait6],
   wedding: [wedding1, wedding2, wedding3, wedding4, wedding5, wedding6],
   nature: [nature1, nature2, nature3, nature4, nature5, nature6],
   sports: [portfolioSports, portfolioSports, portfolioSports, portfolioSports, portfolioSports, portfolioSports],
