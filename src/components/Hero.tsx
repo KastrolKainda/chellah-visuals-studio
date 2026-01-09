@@ -85,7 +85,7 @@ const Hero = () => {
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-8 h-[2px] bg-gold" />
-                    <span className="text-gold text-sm font-inter tracking-widest uppercase">Est. 2020</span>
+                    <span className="text-gold text-sm font-inter tracking-widest uppercase">Est. 2010</span>
                   </div>
                   <h3 className="font-playfair text-2xl md:text-3xl font-bold text-white mb-2">
                     Chellah Studio
