@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import portraitCover from "@/assets/portrait-cover.jpg";
 import wedding1 from "@/assets/wedding-1.jpg";
 import nature1 from "@/assets/nature-1.jpg";
-import portfolioSports from "@/assets/portfolio-sports.jpg";
+import sportsCover from "@/assets/sports-cover.jpg";
 import fashion1 from "@/assets/fashion-1.jpg";
 import architectureCover from "@/assets/architecture-cover.jpg";
 
@@ -11,7 +11,7 @@ const portfolioItems = [
   { id: 1, image: portraitCover, title: "Portrait", category: "portrait" },
   { id: 2, image: wedding1, title: "Wedding", category: "wedding" },
   { id: 3, image: nature1, title: "Nature & Wildlife", category: "nature" },
-  { id: 4, image: portfolioSports, title: "Sports", category: "sports" },
+  { id: 4, image: sportsCover, title: "Sports", category: "sports" },
   { id: 5, image: fashion1, title: "Fashion", category: "fashion" },
   { id: 6, image: architectureCover, title: "Architecture", category: "architecture" },
 ];

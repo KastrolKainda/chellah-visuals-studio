@@ -9,8 +9,12 @@ import wedding3 from "@/assets/wedding-3.jpg";
 import wedding4 from "@/assets/wedding-4.jpg";
 import wedding5 from "@/assets/wedding-5.jpg";
 import wedding6 from "@/assets/wedding-6.jpg";
-import portfolioSports from "@/assets/portfolio-sports.jpg";
-import portfolioNature from "@/assets/portfolio-nature.jpg";
+import sports1 from "@/assets/sports-1.jpg";
+import sports2 from "@/assets/sports-2.jpg";
+import sports3 from "@/assets/sports-3.jpg";
+import sports4 from "@/assets/sports-4.jpg";
+import sports5 from "@/assets/sports-5.jpg";
+import sports6 from "@/assets/sports-6.jpg";
 import nature1 from "@/assets/nature-1.jpg";
 import nature2 from "@/assets/nature-2.jpg";
 import nature3 from "@/assets/nature-3.jpg";
@@ -40,7 +44,7 @@ const categoryImages = {
   portrait: [portrait1, portrait2, portrait3, portrait4, portrait5, portrait6],
   wedding: [wedding1, wedding2, wedding3, wedding4, wedding5, wedding6],
   nature: [nature1, nature2, nature3, nature4, nature5, nature6],
-  sports: [portfolioSports, portfolioSports, portfolioSports, portfolioSports, portfolioSports, portfolioSports],
+  sports: [sports1, sports2, sports3, sports4, sports5, sports6],
   fashion: [fashion1, fashion2, fashion3, fashion4, fashion5, fashion6],
   architecture: [architecture1, architecture2, architecture3, architecture4, architecture5, architecture6],
 };
