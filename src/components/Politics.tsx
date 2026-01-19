@@ -55,11 +55,8 @@ const Politics = () => {
             <Flag className="text-gold w-6 h-6" />
             <span className="text-gold text-sm font-inter tracking-widest uppercase">Political Vision</span>
           </div>
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
-            A Vision for{" "}
-            <span className="bg-gradient-to-r from-gold via-copper to-gold bg-clip-text text-transparent animate-pulse">
-              Tomorrow
-            </span>
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 animate-fade-in bg-gradient-to-r from-gold via-copper to-gold bg-clip-text text-transparent">
+            A Vision for Tomorrow
           </h2>
           <p className="text-white/80 font-inter text-lg animate-fade-in-up">
             Beyond the lens, Chellah is deeply committed to civic engagement and building a better future for all.
@@ -255,22 +252,6 @@ const Politics = () => {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <p className="text-white/70 font-inter mb-6">
-            Want to be part of the movement? Let's connect and build a better tomorrow.
-          </p>
-          <button
-            onClick={() => {
-              const element = document.getElementById("contact");
-              if (element) element.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-gold text-charcoal font-inter font-semibold rounded-lg hover:shadow-gold hover:-translate-y-1 transition-all duration-300"
-          >
-            <Flag className="w-5 h-5" />
-            Join the Movement
-          </button>
-        </div>
       </div>
     </section>
   );
