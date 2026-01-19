@@ -1,7 +1,10 @@
-import { Flag, Users, Scale, Lightbulb, Target, Heart } from "lucide-react";
-import photographerImage from "@/assets/photographer-male.jpg";
+import { Flag, Users, Scale, Lightbulb, Target, Heart, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import politicsImage from "@/assets/chellah-politics.jpg";
 
 const Politics = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
   const values = [
     {
       icon: Users,
@@ -25,9 +28,27 @@ const Politics = () => {
     },
   ];
 
+  // Auto-slide carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % values.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [values.length]);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % values.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + values.length) % values.length);
+
   return (
-    <section id="politics" className="py-24 bg-charcoal">
-      <div className="container mx-auto px-6">
+    <section id="politics" className="py-24 bg-gradient-to-br from-charcoal via-charcoal to-secondary/40 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 left-0 w-full h-full">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-copper/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/3 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -35,9 +56,12 @@ const Politics = () => {
             <span className="text-gold text-sm font-inter tracking-widest uppercase">Political Vision</span>
           </div>
           <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
-            A Vision for <span className="bg-gradient-accent bg-clip-text text-transparent">Tomorrow</span>
+            A Vision for{" "}
+            <span className="bg-gradient-to-r from-gold via-copper to-gold bg-clip-text text-transparent animate-pulse">
+              Tomorrow
+            </span>
           </h2>
-          <p className="text-muted-foreground font-inter text-lg animate-fade-in-up">
+          <p className="text-white/80 font-inter text-lg animate-fade-in-up">
             Beyond the lens, Chellah is deeply committed to civic engagement and building a better future for all.
           </p>
         </div>
@@ -46,15 +70,15 @@ const Politics = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           {/* Image Side */}
           <div className="relative animate-fade-in">
-            <div className="relative overflow-hidden rounded-2xl">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <img
-                src={photographerImage}
+                src={politicsImage}
                 alt="Chellah - Political Vision"
-                className="w-full h-[500px] object-cover"
+                className="w-full h-[500px] object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-charcoal/80 backdrop-blur-sm border border-gold/20 rounded-lg p-4">
+                <div className="bg-charcoal/90 backdrop-blur-md border border-gold/30 rounded-lg p-4 shadow-gold">
                   <p className="font-playfair text-xl text-white italic">
                     "The power of an image can change minds. The power of action can change lives."
                   </p>
@@ -62,8 +86,10 @@ const Politics = () => {
               </div>
             </div>
             {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-gold/10 rounded-full blur-2xl" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-copper/10 rounded-full blur-2xl" />
+            <div className="absolute -top-6 -right-6 w-32 h-32 bg-gold/20 rounded-full blur-2xl animate-pulse" />
+            <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-copper/20 rounded-full blur-2xl animate-pulse" />
+            {/* Border decoration */}
+            <div className="absolute -inset-2 border-2 border-gold/20 rounded-3xl -z-10" />
           </div>
 
           {/* Mission Statement */}
@@ -75,7 +101,7 @@ const Politics = () => {
             <h3 className="font-playfair text-3xl font-bold text-white mb-6">
               Empowering Communities Through Service
             </h3>
-            <div className="space-y-4 text-foreground/80 font-inter leading-relaxed">
+            <div className="space-y-4 text-white font-inter leading-relaxed">
               <p>
                 As a photographer, I've witnessed the beauty and struggles of our community through my lens. 
                 Every portrait tells a story of resilience, every event captures our collective spirit. 
@@ -94,41 +120,91 @@ const Politics = () => {
           </div>
         </div>
 
-        {/* Core Values */}
+        {/* Core Values Carousel */}
         <div className="mb-20">
           <div className="text-center mb-12">
             <h3 className="font-playfair text-3xl font-bold text-white mb-4">Core Values</h3>
-            <p className="text-muted-foreground font-inter">The principles that guide every decision</p>
+            <p className="text-white/70 font-inter">The principles that guide every decision</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => (
+          
+          {/* Carousel Container */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-12 h-12 rounded-full bg-gold/20 border border-gold/50 flex items-center justify-center text-gold hover:bg-gold hover:text-charcoal transition-all duration-300"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-12 h-12 rounded-full bg-gold/20 border border-gold/50 flex items-center justify-center text-gold hover:bg-gold hover:text-charcoal transition-all duration-300"
+            >
+              <ChevronRight size={24} />
+            </button>
+
+            {/* Carousel Track */}
+            <div className="overflow-hidden rounded-2xl">
               <div
-                key={value.title}
-                className="p-6 rounded-xl bg-secondary/30 border border-border/50 hover:border-gold/50 hover:shadow-gold hover:-translate-y-2 transition-all duration-500 group animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gold/10 mb-4 group-hover:bg-gold/20 group-hover:scale-110 transition-all duration-300">
-                  <value.icon className="text-gold group-hover:rotate-12 transition-transform duration-300" size={28} />
-                </div>
-                <h4 className="font-playfair text-xl font-semibold text-white mb-2">{value.title}</h4>
-                <p className="text-muted-foreground font-inter text-sm">{value.description}</p>
+                {values.map((value, index) => (
+                  <div
+                    key={value.title}
+                    className="w-full flex-shrink-0 p-8"
+                  >
+                    <div className="bg-gradient-to-br from-secondary/60 to-charcoal/80 backdrop-blur-sm border border-gold/30 rounded-2xl p-10 shadow-xl hover:shadow-gold transition-all duration-500 group">
+                      <div className="flex flex-col md:flex-row items-center gap-8">
+                        <div className="flex-shrink-0">
+                          <div className="w-24 h-24 rounded-full bg-gradient-to-br from-gold/30 to-copper/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                            <value.icon className="text-gold w-12 h-12 group-hover:rotate-12 transition-transform duration-300" />
+                          </div>
+                        </div>
+                        <div className="text-center md:text-left">
+                          <h4 className="font-playfair text-3xl font-bold bg-gradient-to-r from-gold to-copper bg-clip-text text-transparent mb-4">
+                            {value.title}
+                          </h4>
+                          <p className="text-white font-inter text-lg leading-relaxed">
+                            {value.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center gap-3 mt-6">
+              {values.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentSlide
+                      ? "bg-gold w-8"
+                      : "bg-gold/30 hover:bg-gold/50"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
         {/* The Speech */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-gradient-to-br from-secondary/50 to-secondary/30 rounded-2xl p-8 md:p-12 border border-gold/20">
+          <div className="relative bg-gradient-to-br from-gold/10 via-secondary/50 to-copper/10 rounded-2xl p-8 md:p-12 border border-gold/30 shadow-2xl">
             {/* Quote Mark */}
-            <div className="absolute -top-4 left-8 text-gold/30 text-8xl font-playfair">"</div>
+            <div className="absolute -top-4 left-8 text-gold/40 text-8xl font-playfair">"</div>
             
             <div className="relative z-10">
               <h3 className="font-playfair text-2xl md:text-3xl font-bold text-white mb-8 text-center">
                 A Message to Our Community
               </h3>
               
-              <div className="space-y-6 text-foreground/90 font-inter leading-relaxed text-lg">
+              <div className="space-y-6 text-white font-inter leading-relaxed text-lg">
                 <p>
                   My fellow citizens,
                 </p>
@@ -153,18 +229,18 @@ const Politics = () => {
                   We will invest in our youth, honor our elders, and build bridges where others seek to 
                   create walls. We will prove that progress and tradition can walk hand in hand.
                 </p>
-                <p className="text-gold font-semibold">
+                <p className="text-gold font-semibold text-xl">
                   This is not just my vision—it is our shared destiny. Join me, and let's write the next 
                   chapter of our community's story together.
                 </p>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-gold/20 flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gold">
+              <div className="mt-8 pt-6 border-t border-gold/30 flex items-center gap-4">
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gold shadow-gold">
                   <img
-                    src={photographerImage}
+                    src={politicsImage}
                     alt="Chellah"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div>
@@ -175,13 +251,13 @@ const Politics = () => {
             </div>
 
             {/* Closing Quote Mark */}
-            <div className="absolute -bottom-4 right-8 text-gold/30 text-8xl font-playfair rotate-180">"</div>
+            <div className="absolute -bottom-4 right-8 text-gold/40 text-8xl font-playfair rotate-180">"</div>
           </div>
         </div>
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <p className="text-muted-foreground font-inter mb-6">
+          <p className="text-white/70 font-inter mb-6">
             Want to be part of the movement? Let's connect and build a better tomorrow.
           </p>
           <button
