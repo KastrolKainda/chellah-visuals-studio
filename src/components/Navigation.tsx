@@ -64,6 +64,12 @@ const Navigation = () => {
               About
             </button>
             <button
+              onClick={() => scrollToSection("politics")}
+              className="text-white/70 hover:text-gold transition-colors font-inter text-sm tracking-wide"
+            >
+              Politics
+            </button>
+            <button
               onClick={() => scrollToSection("portfolio")}
               className="text-white/70 hover:text-gold transition-colors font-inter text-sm tracking-wide"
             >
@@ -108,6 +114,12 @@ const Navigation = () => {
                 className="text-white/70 hover:text-gold transition-colors font-inter text-left"
               >
                 About
+              </button>
+              <button
+                onClick={() => scrollToSection("politics")}
+                className="text-white/70 hover:text-gold transition-colors font-inter text-left"
+              >
+                Politics
               </button>
               <button
                 onClick={() => scrollToSection("portfolio")}
